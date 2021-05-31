@@ -1,4 +1,4 @@
-package com.personal.library;
+package com.personal;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
