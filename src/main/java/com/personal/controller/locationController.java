@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class locationController {
-
+	
 	@RequestMapping("")
 	public String index() {
 		System.out.println("[TRACE] index");
@@ -19,5 +19,12 @@ public class locationController {
 		System.out.println("[TRACE] servletHandler");
 		
 		return "servletHandler";
+	}
+	
+	@RequestMapping("postCode.do")
+	public String postCode() {
+		System.out.println("[TRACE] postCode");
+		
+		return "postCode";
 	}
 }

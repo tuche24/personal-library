@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<h2>postCode</h2>
+<div>zonecode : <input type="text" id="zonecode" readonly /></div>
+<div>address : <input type="text" id="address" readonly /></div>
+<div>sido : <input type="text" id="sido" readonly /></div>
+<div>sigungu : <input type="text" id="sigungu" readonly /></div>
+<br>
+
+<button onclick="postCode()">주소검색</button>
+<button onclick="index()">색인으로</button>
+
+</body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+function postCode(){
+    new daum.Postcode({
+        oncomplete: function(data) {
+            $('#zonecode').val(data.zonecode);
+            $('#address').val(data.address);
+            $('#sido').val(data.sido);
+            $('#sigungu').val(data.sigungu);
+        }
+    }).open();
+}
+function index(){
+	location.href="/";
+}
+</script>
+</html>
