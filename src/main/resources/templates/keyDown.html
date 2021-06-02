@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/common/js/common.js"></script>
+<script src="/common/js/jQuery.js"></script>
+</head>
+<body>
+<h2>keyDown</h2>
+<button onclick="index()" id="keyDownBtn">엔터 누를 시 색인으로 이동</button>
+</body>
+
+<script>
+document.addEventListener("keydown", function(event){
+	if(event.keyCode === 13) {
+		event.preventDefault();
+		document.getElementById("keyDownBtn").click();
+	}
+});
+</script>
+
+</html>

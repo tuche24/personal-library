@@ -1,3 +1,3 @@
-function index(){
+function index() {
 	location.href="/";
 }

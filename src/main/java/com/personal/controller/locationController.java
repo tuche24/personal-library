@@ -27,4 +27,11 @@ public class locationController {
 		
 		return "postCode";
 	}
+	
+	@RequestMapping("keyDown.do")
+	public String keyDown() {
+		System.out.println("[TRACE] keyDown");
+		
+		return "keyDown";
+	}
 }
