@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class locationController {
+public class LocationController {
 	
 	@RequestMapping("")
 	public String index() {
@@ -33,5 +33,12 @@ public class locationController {
 		System.out.println("[TRACE] keyDown");
 		
 		return "keyDown";
+	}
+	
+	@RequestMapping("restAjax.do")
+	public String restAjax() {
+		System.out.println("[TRACE] restAjax");
+		
+		return "restAjax";
 	}
 }
