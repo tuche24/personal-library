@@ -3,13 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="/common/js/common.js"></script>
+<script src="/common/js/jQuery.js"></script>
 </head>
 <body>
 <h2>restAjax</h2>
 
+<button onclick="findAllUser()">findAllUser</button>
 
+<table id="ajaxTable">
+</table>
+
+<button onclick="index()">색인</button>
 </body>
 <script>
+function findAllUser(){
+	let table = document.getElementById('ajaxTable');
+	
+	$.ajax({
+		type : "GET",
+		url : "/rest/user",
+		success : function(data) {
+			alert("통신 성공했습니다.");
+			alert(JSON.stringify(data));
+			for(let i = 0; i < data.length; i++) {
+				
+				let row = `
+							<tr>
+								<td>${data[i].userNum}</td>
+								<td>${data[i].userId}</td>
+								<td>${data[i].userName}</td>
+							</tr>
+						  `;
+						  
+				table.innerHTML += row;	  
+			}
+		},
+		error : function(res){
+			alert("통신 실패했습니다.");
+		}
+	});
+}
+
+
+
 function registItem(){
 	let fileLength = $('#file').length;
 	alert(fileLength);
