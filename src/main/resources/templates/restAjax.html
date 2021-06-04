@@ -9,4 +9,35 @@
 
 
 </body>
+<script>
+function registItem(){
+	let fileLength = $('#file').length;
+	alert(fileLength);
+	
+	let form = new FormData();
+	
+	let itemModel = $('#itemModel').val();
+	let itemPrice = $('#itemPrice').val();
+	let itemSpec = $('#itemSpec').val();
+	/* 첫번째 파일 한 개 추가 */
+	form.append("file1", $("#file")[0].files[0] );
+	form.append("itemModel", itemModel);
+	form.append("itemPrice", itemPrice);
+	form.append("itemSpec", itemDetail);
+	$.ajax({
+		type : "POST",
+		url : "",
+		data : form,
+		processData : false,
+		contentType : false,
+		success : function(res){
+			alert("상품이 등록되었습니다.");
+			location.href="";			
+		},
+		error : function(res){
+			alert("통신 실패");
+		}
+	});
+}
+</script>
 </html>
