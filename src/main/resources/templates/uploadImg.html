@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/common/js/common.js"></script>
+<script src="/common/js/jQuery.js"></script>
+</head>
+<body>
+<h2>uploadImg</h2>
+
+<input type="file" id="file" />
+<button onclick="uploadImg()">uploadImg</button>
+</body>
+<script>
+function uploadImg(){
+	let fileLength = $('#file').length;
+	
+	let form = new FormData();
+	
+	form.append("file", $("#file")[0].files[0] );
+	
+	$.ajax({
+		type : "POST",
+		url : "/item",
+		data : form,
+		processData : false,
+		contentType : false,
+		success : function(res){
+			alert("상품이 등록되었습니다.");
+			location.href="/";			
+		},
+		error : function(res){
+			alert("통신 실패");
+		}
+	});
+}
+</script>
+</html>

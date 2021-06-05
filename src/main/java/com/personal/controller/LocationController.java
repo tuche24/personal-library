@@ -41,4 +41,11 @@ public class LocationController {
 		
 		return "restAjax";
 	}
+	
+	@RequestMapping("uploadImg.do")
+	public String uploadImg() {
+		System.out.println("[TRACE] uploadImg");
+		
+		return "uploadImg";
+	}
 }

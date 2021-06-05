@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.personal.dao.ItemDao">
+	
+	<resultMap id="itemMap" type="com.personal.vo.ItemVO">
+		<result property="itemNum" column="ITEM_NUM" />
+		<result property="itemImg" column="ITEM_IMG" jdbcType="BLOB" javaType="byte[]"/>
+	</resultMap>
+
+	<insert id="createItem" parameterType="com.personal.vo.ItemVO">
+		INSERT INTO ITEM(ITEM_IMG)
+		VALUES (#{itemImg})
+	</insert>
+</mapper>
