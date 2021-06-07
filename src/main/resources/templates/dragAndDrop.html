@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Drag And Drop</title>
+<script src="/common/js/common.js"></script>
+<script src="/common/js/jQuery.js"></script>
+</head>
+<body>
+<!-- 참조 : https://sub0709.tistory.com/46 -->
+<h2>Drag And Drop</h2>
+<div id="drop" style="border: 1px solid black; width: 800px; height: 300px; padding: 3px">
+	여기로 drag & drop
+</div>
+</body>
+<script>
+var dropLocation = $("#drop");
+
+dropLocation.on("dragenter", function(e){
+	$(this).addClass('drag-over');
+}).on("dragleave", function(e){
+	$(this).removeClass('drag-over');
+}).on("dragover", function(e){
+	e.stopPropagation();
+	e.preventDefault();
+}).on('drop', function(e){
+	e.preventDefault();
+	$(this).removeClass('drag-over');
+})
+
+</script>
+</html>

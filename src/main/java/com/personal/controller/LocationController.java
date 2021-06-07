@@ -48,4 +48,11 @@ public class LocationController {
 		
 		return "uploadImg";
 	}
+	
+	@RequestMapping("dragAndDrop.do")
+	public String dragAndDrop() {
+		System.out.println("[TRACE] dragAndDrop");
+		
+		return "dragAndDrop";
+	}
 }
