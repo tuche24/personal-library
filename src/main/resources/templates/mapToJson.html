@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>mapToJson</title>
+<script src="/common/js/common.js"></script>
+<script src="/common/js/jQuery.js"></script>
+</head>
+<body>
+<h2>mapToJson</h2>
+<table>
+	<tr>
+		<th>No</th>
+		<th>카테고리</th>
+		<th>타입</th>
+		<th>제목</th>
+		<th>작성자</th>
+	</tr>
+	<tbody>
+		<tr th:each="mtj : ${MTJ}">
+			<td><span th:onclick="mapToJson([[${mtj}]])" style="cursor: pointer; color: blue;" th:text="*{mtj.MTJ_NUM}"></span></td>
+			<td><span th:text="*{mtj.MTJ_CATEGORY}"></span></td>
+			<td><span th:text="*{mtj.MTJ_TYPE}"></span></td>
+			<td><span th:text="*{mtj.MTJ_TITLE}"></span></td>
+			<td><span th:text="*{mtj.MTJ_WRITER}"></span></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+<script>
+function mapToJson(mtj){
+	alert(mtj);
+}
+
+</script>
+
+</html>
