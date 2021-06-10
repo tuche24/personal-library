@@ -75,4 +75,11 @@ public class LocationController {
 		
 		return "mapToJson";
 	}
+	
+	@RequestMapping("regex.do")
+	public String regex() {
+		System.out.println("[TRACE] regex");
+		
+		return "regex";
+	}
 }
