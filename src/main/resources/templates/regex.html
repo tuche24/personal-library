@@ -8,11 +8,14 @@
 </head>
 <body>
 <h2>regex</h2>
-<div>
+<div style="margin-bottom: 50px;">
+	<h4>숫자만 입력가능한 input</h4>
 	<input type="text" id="regex_number" onKeyup="this.value=this.value.replace(/[^0-9]/g,'')" placeholder="숫자만 입력가능" />
 </div>
+<!-- 참조 : https://jess2.xyz/JavaScript/variable-regex/ -->
 <div>
-	<textarea id="findC_t" cols="30" rows="30">
+	<h4>입력된 문자열 찾기</h4>
+	<textarea id="findLetter" cols="30" rows="10" readonly style="display: block; margin-bottom: 10px;">
 sales1.xls
 orders3.xls
 sales2.xls
@@ -23,16 +26,28 @@ na1.xls
 na2.xls
 sa1.xls
 	</textarea>
+	<input type="text" id="letterPattern" placeholder="패턴을 입력하세요" />
+	<button onclick="fn_find()">찾기</button>
 </div>
-<button onclick="fn_findSales()">findSales</button>
+
 
 </body>
 
+
 <script>
-function fn_findSales() {
-	var findC_t = $('#findC_t').val();
-	var result = findC_t.match('sales');
-	alert(result);
+function fn_find() {
+	let letter = $('#findLetter').val();
+	console.log(letter);
+	
+	let letterPatternVal = $('#letterPattern').val();
+	console.log(letterPatternVal);
+	
+	let letterPattern = new RegExp(letterPatternVal, "g");
+	console.log(letterPattern);
+	
+	let result = letterPattern.exec(letter);
+	console.log(result);
+	
 }
 
 </script>
